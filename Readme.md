@@ -25,7 +25,7 @@ Finalmente, deben incluirse todos los jugadores añadidos a un repositorio de ju
 
 **Consultar listas**: es una tarea que pueden llevar a cabo tanto jugadores como administradores. Considero que las relaciones entre "Consultar listas" no incluyen siempre el listado de equipos o el listado de jugadores, unas veces incluirán uno de ellos y otras los dos, por eso las he definido como `<extend>`.
 
-El diagrama de casos de uso se encuentra en la siguiente ruta:
+El diagrama de casos de uso resultante es:
 ![Diagrama de casos de uso](./img/Diagrama_de_casos_de_uso.jpg)
 
 # PARTE 3: Identificación de clases y relaciones
@@ -46,7 +46,7 @@ Respecto a las relaciones que considero en el diagrama de clases he utilizado do
 # PARTE 4: Creación del diagrama de clases
 La única cardinalidad existente en todo este sistema tiene lugar entre las entidades reales "Jugador" y "Equipo". Dado que en un equipo pueden estar inscritos uno o múltiples jugadores (1..n) y cada uno de estos jugadores sólo puede estar inscrito en un solo equipo (1).
 
-El diagrama de clases se encuentra en la siguiente ruta:
+El diagrama de clases resultante es:
 ![Diagrama de clases](./img/Diagrama_de_clases.jpg)
 
 # PARTE 5: Conclusiones
