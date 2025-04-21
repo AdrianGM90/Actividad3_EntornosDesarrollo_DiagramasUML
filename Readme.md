@@ -20,13 +20,16 @@ La relación que existe entre ellos es que un equipo consta de múltiples jugado
 En los casos de uso de la "Gestión de equipo y jugadores" interpreto lo siguiente:
 **Registrar equipo**: considero que "Registrar equipo" es algo que puede hacer el mismo jugador mientras que la adición de equipos a un repositorio es una tarea automática que debe hacer el sistema. "Registar equipo" debe incluir siempre otro caso de uso para añadir equipos nuevos a un repositorio, comprobando previamente a través de otro caso de uso que los equipos que se registran no se encuentran ya definidos en el repositorio. Como estos casos de uso deben ocurrir siempre cada vez que se recurre a "Registrar equipo", considero que la relación adecuada debe ser `<include>`.
 
+![Diagrama de casos de uso - Registrar equipo](./diagrams/teamRegister-useCase.png)
+
 **Añadir jugadores**: considero también que "Añadir jugadores" es una tarea responsabilidad del jugador. Este caso de uso debe incluir otros casos de uso para comprobar que el equipo en el que se desean insertar los jugadores ya esté incluido en el repositorio. También debe comprobarse que no se repita el mismo jugador dentro del mismo equipo y que no se encuentre inscrito en ningún otro equipo. 
 Finalmente, deben incluirse todos los jugadores añadidos a un repositorio de jugadores. Análogamente al caso anterior, como estos casos de uso deben ocurrir siempre cada vez que se recurre a "Añadir jugadores", considero que la relación adecuada debe ser `<include>`.
 
+![Diagrama de casos de uso - Añadir jugadores](./diagrams/addPlayer2Team-useCase.png)
+
 **Consultar listas**: es una tarea que pueden llevar a cabo tanto jugadores como administradores. Considero que las relaciones entre "Consultar listas" no incluyen siempre el listado de equipos o el listado de jugadores, unas veces incluirán uno de ellos y otras los dos, por eso las he definido como `<extend>`.
 
-El diagrama de casos de uso resultante es:
-![Diagrama de casos de uso](./img/Diagrama_de_casos_de_uso.jpg)
+![Diagrama de casos de uso - Añadir jugadores](./diagrams/viewListTeamsAndPlayers-useCase.png)
 
 # PARTE 3: Identificación de clases y relaciones
 Parto de la base de qué es cada tipo de clase:
@@ -35,9 +38,9 @@ Parto de la base de qué es cada tipo de clase:
 - **Clases de interfaz**: permiten al usuario interactuar con el sistema, permitiendo gestiones simples con el sistema.
 
 Considerando el diagrama de casos de uso puedo identificar estas clases:
-- Entidad (contienen los atributos de las entidades Equipo y Jugador): Equipo y Jugador.
-- Control (repositorios de datos que poseen métodos de gestión del listado de equipos y jugadores): ControlRegistroEquipos y ControlRegistroJugadores.
-- Interfaz (permiten interactuar con el usuario para realizar la adición de equipos, jugadores y consultar los listados): InterfazRegistroEquipos, InterfazRegistroJugadores e InterfazConsultaListados.
+- **Entidad (contienen los atributos de las entidades Equipo y Jugador)**: Equipo y Jugador.
+- **Control (repositorios de datos que poseen métodos de gestión del listado de equipos y jugadores)**: ControlRegistroEquipos y ControlRegistroJugadores.
+- **Interfaz (permiten interactuar con el usuario para realizar la adición de equipos, jugadores y consultar los listados)**: InterfazRegistroEquipos, InterfazRegistroJugadores e InterfazConsultaListados.
 
 Respecto a las relaciones que considero en el diagrama de clases he utilizado dos tipos:
 - **Relación de asociación**: cuando una clase interactúa con otra definiendo o modificando la estructura del repositorio de datos (añadir o eliminar elementos).
@@ -46,8 +49,8 @@ Respecto a las relaciones que considero en el diagrama de clases he utilizado do
 # PARTE 4: Creación del diagrama de clases
 La única cardinalidad existente en todo este sistema tiene lugar entre las entidades reales "Jugador" y "Equipo". Dado que en un equipo pueden estar inscritos uno o múltiples jugadores (1..n) y cada uno de estos jugadores sólo puede estar inscrito en un solo equipo (1).
 
-El diagrama de clases resultante es:
-![Diagrama de clases](./img/Diagrama_de_clases.jpg)
+El diagrama de clases se encuentra en la siguiente ruta:
+![Diagrama de clases](./diagrams/clases.png)
 
 # PARTE 5: Conclusiones
 El diseño de un sistema es un proceso complejo que requiere tener en cuenta en todo momento múltiples consideraciones como:
